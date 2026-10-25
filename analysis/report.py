@@ -212,7 +212,7 @@ def _crash_rows(run: Path) -> pd.DataFrame:
 
 
 def build(results: Path, out: Path, figs: Path, conformance=None, pre_fix_verdicts: Path | None = None,
-          narrow: bool = False) -> list[Path]:
+          narrow: bool = False, tables_only: bool = False) -> list[Path]:
     runs = discover(results)
     check_paper_output(runs, out, figs)
     out.mkdir(parents=True, exist_ok=True)
@@ -307,6 +307,8 @@ def build(results: Path, out: Path, figs: Path, conformance=None, pre_fix_verdic
     if neg is not None or timing is not None:
         written.append(figures.f6_control_scaling(neg, timing, figs / "f6_control_scaling.pdf"))
 
+    if tables_only:   # verdicts below need the per-run checker files (not in the public artifact)
+        return written
     h1_trials = dict(trials)
     if "scaling" in runs:
         h1_trials["scaling"] = stats.load_trials(runs["scaling"])
@@ -351,16 +353,23 @@ def main(argv=None) -> int:
                     help="verdicts.json of the superseded pre-fix report, reported alongside (PREREG §8)")
     ap.add_argument("--narrow", action="store_true",
                     help="also write 5-column contrasts_<name>_narrow.tex tables for one-column floats")
+    ap.add_argument("--tables-only", action="store_true",
+                    help="write tables, CSVs and figures only; skip the verdicts and numbers.tex, which need "
+                         "each run's checker_verdicts.jsonl (kept outside the public artifact)")
     args = ap.parse_args(argv)
     out = Path(args.out)
     try:
         written = build(Path(args.results), out, Path(args.figs) if args.figs else out / "figs",
-                        args.conformance, args.pre_fix_verdicts, args.narrow)
+                        args.conformance, args.pre_fix_verdicts, args.narrow, args.tables_only)
     except (OSError, ValueError, KeyError) as exc:
         print(f"report: {exc}", file=sys.stderr)
         return 2
     for p in written:
         print(p)
+    if args.tables_only:
+        print("\nTables only: verdicts and numbers.tex need each run's checker_verdicts.jsonl "
+              "(see docs/RESULTS_ARCHIVE.md); the archived results are in paper/generated/.")
+        return 0
     print("\nPre-registered verdicts (docs/PREREG.md §4):")
     print((out / "verdicts.md").read_text(encoding="utf-8"), end="")
     return 0

@@ -33,11 +33,15 @@ Stripe tests are skipped unless `STRIPE_TEST_KEY` holds a **test-mode** key (`sk
 
 ## Reproducing the results
 
-- **From this repository:**
-  - `python -m analysis.report --results results/holdout --out <dir> --figs <dir> --conformance results/conformance/stripe-20261024T024751Z --narrow` regenerates the paired-contrast tables, including the paper's Table III. The output is byte-identical to `paper/generated/`.
-  - The false-closure counts, verdicts and crash-matrix table also need the per-run checker verdict files (several GB). These are not in this repository; `docs/RESULTS_ARCHIVE.md` lists every such file with its SHA-256.
-- **From scratch:** `python -m experiments.run --config configs/<name>.toml --partition holdout --out results/holdout/<name>` reruns a configuration. The same configuration and seed give byte-identical outputs. Holdout runs are guarded by the `prereg-v1` git tag; this snapshot has no history, so the guard refuses holdout seeds here, and development-seed runs work as-is. A full holdout rerun takes many hours on one machine.
-- **Paper:** `make -C paper check` builds the paper with the bundled IEEE class and checks the page limit, fonts, citations and that no number is typed by hand.
+- **Tables, from this repository alone** (about a minute):
+  ```
+  python -m analysis.report --results results/holdout --out regen --figs regen/figs \
+      --conformance results/conformance/stripe-20261024T024751Z --narrow --tables-only
+  ```
+  This regenerates every table and CSV the paper uses from the committed holdout trials, byte-identical to `paper/generated/`. It covers the paired contrasts (Table III), false closures, the crash matrix (Table IV), the negative control, the late-cancel ablation and scaling. The figures are regenerated too; their PDF bytes depend on the matplotlib version.
+- **Verdicts:** the pre-registered verdicts (`paper/generated/verdicts.md`) also gate on the checker's per-run integrity results (`checker_verdicts.jsonl`, several GB). These are not in this repository; `docs/RESULTS_ARCHIVE.md` lists every such file with its SHA-256.
+- **From scratch:** `python -m experiments.run --config configs/<name>.toml --partition dev --out results/dev/<name>` runs a configuration. The same configuration and seed give byte-identical outputs. Holdout runs are guarded by the `prereg-v1` git tag of the working repository; this snapshot has no history, so the guard refuses holdout seeds here.
+- **Paper:** `make -C paper check` builds the paper with the bundled IEEE class and checks the page limit, fonts, citations, and that no number is typed by hand.
 
 ## License
 
