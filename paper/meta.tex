@@ -9,14 +9,19 @@
 \newcommand{\AuthorEmail}{aditya11997@gmail.com}
 \newcommand{\RepoURL}{\url{https://github.com/aditya11997/contained-not-closed-artifact}}
 \newcommand{\AnonArtifactURL}{\CONFIRM{anonymized artifact URL}}
+% Zenodo record of the per-run holdout data (reserved DOI; resolves once the record is published).
+\newcommand{\DataURL}{\url{https://doi.org/10.5281/zenodo.23650008}}
+\newcommand{\AnonDataURL}{\CONFIRM{anonymized data URL}}
 
 \ifanon
   \newcommand{\AuthorBlock}{\author{\IEEEauthorblockN{Anonymous Author(s)}}}
   \newcommand{\ArtifactURL}{\AnonArtifactURL}
+  \newcommand{\DataLink}{\AnonDataURL}
   \hypersetup{pdfauthor={},pdftitle={\PaperTitle},pdfcreator={},pdfproducer={}}
 \else
   \newcommand{\AuthorBlock}{\author{\IEEEauthorblockN{\AuthorName}
     \IEEEauthorblockA{\AuthorAffil\\ \AuthorLocation\\ \AuthorEmail}}}
   \newcommand{\ArtifactURL}{\RepoURL}
+  \newcommand{\DataLink}{\DataURL}
   \hypersetup{pdftitle={\PaperTitle}}
 \fi
