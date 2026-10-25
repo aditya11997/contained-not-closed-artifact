@@ -1,0 +1,71 @@
+{
+ "entries": [
+  {
+   "basis": "nominal_deadline",
+   "effect_seq": null,
+   "evidence_result": null,
+   "evidence_seq": null,
+   "reported_at": 18,
+   "state": "CLOSED_EXPOSURE",
+   "uid": "A000"
+  },
+  {
+   "basis": "cancel_reply",
+   "effect_seq": 9,
+   "evidence_result": "CANCELLED",
+   "evidence_seq": 8,
+   "reported_at": 4,
+   "state": "CLOSED_CANCELLED",
+   "uid": "A001"
+  },
+  {
+   "basis": "timeout_trusted",
+   "effect_seq": null,
+   "evidence_result": null,
+   "evidence_seq": null,
+   "reported_at": 7,
+   "state": "CLOSED_CANCELLED",
+   "uid": "A002"
+  },
+  {
+   "basis": "nominal_deadline",
+   "effect_seq": null,
+   "evidence_result": null,
+   "evidence_seq": null,
+   "reported_at": 18,
+   "state": "CLOSED_EXPOSURE",
+   "uid": "A003"
+  },
+  {
+   "basis": "nominal_deadline",
+   "effect_seq": null,
+   "evidence_result": null,
+   "evidence_seq": null,
+   "reported_at": 18,
+   "state": "CLOSED_EXPOSURE",
+   "uid": "A004"
+  },
+  {
+   "basis": "nominal_deadline",
+   "effect_seq": null,
+   "evidence_result": null,
+   "evidence_seq": null,
+   "reported_at": 18,
+   "state": "CLOSED_EXPOSURE",
+   "uid": "A005"
+  },
+  {
+   "basis": "nominal_deadline",
+   "effect_seq": null,
+   "evidence_result": null,
+   "evidence_seq": null,
+   "reported_at": 18,
+   "state": "CLOSED_EXPOSURE",
+   "uid": "A006"
+  }
+ ],
+ "evidence_bounded": false,
+ "incident_id": "INC-0",
+ "policy": "lm_ack",
+ "schema": "p4.report/v1"
+}

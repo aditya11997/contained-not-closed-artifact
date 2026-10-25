@@ -1,0 +1,28 @@
+# G1 dev exploration (exploratory, dev seeds only): sensitivity of the H1/H2 pattern to the
+# placeholder outage presets (lambda, L, r) and the capture jitter j. Run with
+#   --faults configs/dev/g1_faults.toml --presets configs/dev/g1_presets.toml
+name = "g1_sensitivity"
+n_seeds = 200
+policies = ["none", "edf", "mh", "lm_ack", "lm_verify", "lm_reconcile", "adaptive"]
+
+# Outage grid at the current jitter (j = 3).
+[[block]]
+fault = ["none", "g1_c_low", "g1_c_high", "g1_lam005_low", "g1_lam005_high", "g1_lam05_low", "g1_lam05_high", "g1_L2_low", "g1_L2_high", "g1_L8_low", "g1_L8_high", "g1_r0_low", "g1_r0_high", "g1_r1_low", "g1_r1_high", "g1_hiLhiL_low", "g1_hiLhiL_high", "g1_loLloL_low", "g1_loLloL_high"]
+slack = ["tight", "normal"]
+k = [1, 4]
+n = [8, 32]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]
+
+# Jitter j in {0, 6} at the centre outage preset (j = 3 is the centre, above).
+[[block]]
+fault = ["none", "g1_c_low", "g1_c_high"]
+slack = ["tight", "normal"]
+k = [1, 4]
+n = [8, 32]
+score = ["calibrated"]
+jitter = ["none", "uniform6"]
+c = [0.5]
+late_cancel = [true]

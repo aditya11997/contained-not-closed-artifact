@@ -1,0 +1,118 @@
+{
+ "by_cell": {
+  "075ccf621fa7": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "148193277d1e": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "17bba56016f1": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "236d8a21438d": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "2fc8b652e04c": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "328206ba2e3c": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "347a7eaac047": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "3e828d3a312b": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "51d98a472ea0": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "538eab013e02": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "5470ce84e032": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "6bc46fb59a99": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "6f5a2af09e74": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "85828ce2c785": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "8dbff20039b1": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "91c3d2673708": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "b9dc1dbfc316": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "ba6377eeb4cf": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "c76b281ff69f": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "c96375271e24": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "cb6cca07e00f": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "d1d1be8d0f89": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "e939762c4545": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "e95a9973114e": {
+   "not_ok": 0,
+   "runs": 14000
+  }
+ },
+ "counts": {
+  "anchor_mismatch": 0,
+  "cancel_after_capture": 0,
+  "chain_broken": 0,
+  "duplicate_effects": 0,
+  "false_closure": 62831,
+  "false_exposure": 0,
+  "inconsistent_replies": 0,
+  "key_violations": 0,
+  "malformed_lines": 0,
+  "non_monotone": 0,
+  "report_malformed": 0,
+  "revoked_actor_effects": 0,
+  "truth_mismatch": 0,
+  "unsupported_evidence": 0
+ },
+ "not_ok": 0,
+ "runs": 336000
+}

@@ -1,0 +1,5 @@
+cell_id,fault,slack,k,n,score,jitter,c,late_cancel,seeds,seeds_all_equal,max_abs_diff
+e2a42df5b4f7,none,tight,inf,8,calibrated,none,0.5,True,2000,2000,0.0
+9f72de700400,none,tight,inf,32,calibrated,none,0.5,True,2000,2000,0.0
+f60cfe6da7fe,none,normal,inf,8,calibrated,none,0.5,True,2000,2000,0.0
+6e96c5cc8c9b,none,normal,inf,32,calibrated,none,0.5,True,2000,2000,0.0

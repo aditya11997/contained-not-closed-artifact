@@ -1,0 +1,8 @@
+{"actor":"procurement_agent","amount":125000,"error":null,"i":0,"key":"po-0","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A000","vendor":"acme-office"}
+{"actor":"procurement_agent","amount":90000,"error":null,"i":1,"key":"po-1","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A001","vendor":"globex-it"}
+{"actor":"procurement_agent","amount":150000,"error":null,"i":2,"key":"po-2","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A002","vendor":"globex-it"}
+{"actor":"procurement_agent","amount":38000,"error":null,"i":3,"key":"po-3","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A003","vendor":"initech-supply"}
+{"actor":"procurement_agent","amount":64000,"error":null,"i":4,"key":"po-4","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A004","vendor":"northwind-cafe"}
+{"actor":"procurement_agent","amount":12000,"error":null,"i":5,"key":"po-5","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A005","vendor":"initech-supply"}
+{"actor":"procurement_agent","amount":50000,"error":null,"i":6,"key":"po-6","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A006","vendor":"hooli-cloud"}
+{"actor":"procurement_agent","amount":null,"error":null,"i":7,"key":null,"op":"incident_stop","phase":"post_stop","replayed":false,"result":"REVOKED","seq":null,"t":0,"timeout":false,"uid":null,"vendor":null}

@@ -1,0 +1,26 @@
+% Budget: 0.80 pp (AGENT) / 0.55 pp (ICRITO).
+% Sources: docs/PREREG.md sections 4-5 (frozen, tag prereg-v1); configs/*.toml (via design.tex);
+% analysis/stats.py; checker/; tests/checker_mutation; scripts/verify_archive.py.
+\section{Experimental Design}\label{sec:design}
+
+\subsection{System under test}
+Fig.~\ref{fig:arch} shows the harness. The sink owns the clock and writes every request, reply and effect to a hash-chained log; a capture emulator captures each pending payment at its hidden $D_i$. The fault layer draws its faults from a generator keyed by the seed and by each payment's call index, so every runbook meets the same fault realization. Runbooks see only observations and the processor protocol, and static tests forbid them from importing simulator internals or reading hidden labels. An independent checker runs as a separate process, imports only the shared log schema and none of the runbook code, and re-derives every disposition from the log and the hidden truth: it counts false closures, false exposures and duplicate effects and verifies the log's integrity. Mutation tests confirm that it flags each injected tampering of logs and reports. The same protocol is implemented by a Stripe test-mode adapter (Section~\ref{sec:casestudy}).
+
+\begin{figure}[t]
+  \centering
+  \input{figs/f2_architecture}
+  \caption{Harness. Runbooks reach the sink only through the fault layer; the checker grades every run from the log and the hidden truth.}
+  \label{fig:arch}
+\end{figure}
+
+\subsection{Scenarios and grid}
+Amounts lie between \DesignAmountMin{} and \DesignAmountMax{}, nominal capture times between \DesignDMin{} and \DesignDMax{} units scaled by a slack factor (\DesignSlackTight{} for tight, \DesignSlackNormal{} for normal), cancel costs between \DesignSMin{} and \DesignSMax{} units, and a status read costs \DesignQ{} unit. Risk scores between \DesignPMin{} and \DesignPMax{} are calibrated: payment $i$ is suspect with probability $p_i$. Remediation is permitted with probability \DesignPermitProb{}, capture jitter is uniform on $\{-j,\dots,j\}$ with $j = \DesignJitter$, and the collateral weight is $c = \DesignC$. The low fault preset sets $f_\mathrm{req} = \DesignFReqLow$, $f_\mathrm{resp} = \DesignFRespLow$ and outages at rate \DesignOutageRateLow{} of length \DesignOutageLengthLow; the high preset sets \DesignFReqHigh, \DesignFRespHigh, \DesignOutageRateHigh{} and \DesignOutageLengthHigh. Both commit a cancel during an outage with probability $r = \DesignOutageCommitHigh$. These values are sensitivity bands chosen on development seeds, not calibrated failure rates.
+
+The primary grid crosses fault level (none, low, high), slack (tight, normal), $k$ (\lit{1, 4}) and $n$ (\lit{8, 32}): \DesignCells{} cells, \DesignPolicies{} runbooks and \NSeedsPrimary{} seeds per cell, \NRunsPrimary{} runs in total. Secondary blocks vary one factor at a time (score bias and noise, early-only jitter, $c$, $n = 128$, $k = \infty$ with faults, and late cancellation on or off at wider jitter; \NRunsSecondary{} runs). The negative control uses $k = \infty$ with no faults and no jitter (\NRunsNegativeControl{} runs). The crash matrix crashes the remediator at each of the four call points at the first pre-deadline cancel, at a call during an outage, at the first sweep read and at the first post-deadline cancel, then restarts it from its journal (\NRunsCrashMatrix{} runs).
+
+\subsection{Pre-registration and statistics}
+Every design choice was made on development seeds (\DesignDevFirst--\DesignDevLast). Hypotheses H1--H5 and C1, their decision rules and the analysis code were frozen under the git tag \texttt{prereg-v1} before any holdout seed ran, and the runner refuses holdout seeds without that tag. Holdout seeds come from the partition \DesignHoldoutFirst--\DesignHoldoutLast, and every cell and runbook receives the same \NSeedsPrimary{} seeds. The checker reported no integrity failure and no broken hash chain in any holdout run.
+
+The primary outcome is per-seed loss (\ref{eq:loss}); contrasts are paired differences within a cell. We estimate means with a percentile bootstrap of \DesignBoot{} resamples and adjust the primary family, P4$-$P3 and P5$-$P3 in each of the \DesignCells{} cells, with the Holm--Bonferroni step-down procedure at $\alpha = \DesignAlpha$. H2 is decided by the Holm-level confidence bound; false-closure shares carry Wilson intervals. P6$-$P5 (H3) is a secondary analysis with unadjusted intervals. Analyses added after the holdout runs are labelled post hoc and decide nothing. Each was planned in writing before its code ran; PH8 was planned after its pattern had been noticed. PH2, PH3 and PH7 use development seeds, while PH5, PH6 and PH8 describe the holdout runs.
+
+After a disk cleanup deleted holdout files, we regenerated them from the frozen commit. Today \ReproHoldoutFilesMatched{} of \ReproHoldoutFilesListed{} archived holdout files match their recorded \lit{SHA-256} hashes.

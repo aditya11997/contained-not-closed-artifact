@@ -1,0 +1,12 @@
+{
+ "note": "Kept, not deleted (CLAUDE.md rule 5). Made before agent/ was committed, so their manifests name the base commit 235c883 and not the code that ran. Superseded by the reruns from the committed wp6-agent code (docs/CHANGELOG_RESEARCH.md, WP6 entry).",
+ "runs": {
+  "cs-20261024T164731Z-sim-100611": "pre-commit, superseded (harness v1)",
+  "cs-20261024T164950Z-stripe-100601": "pre-commit, superseded",
+  "cs-20261024T165053Z-stripe-100602": "pre-commit, superseded",
+  "cs-20261024T165152Z-stripe-100603": "pre-commit, superseded",
+  "cs-20261024T165305Z-sim-100611": "pre-commit, superseded",
+  "cs-20261024T165406Z-sim-100612": "pre-commit, superseded",
+  "cs-20261024T165509Z-sim-100613": "pre-commit, superseded"
+ }
+}

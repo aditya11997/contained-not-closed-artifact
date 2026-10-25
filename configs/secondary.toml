@@ -1,0 +1,69 @@
+# Secondary analyses (reported, not in the Holm family; PREREG_DRAFT §4). Each block varies
+# one factor from the primary fixed values over fault x slack at k = 1, n = 32 (6 cells each).
+# The last block is the late_cancel ablation for P4-P6 (P0-P3 ignore the flag) at jitter j = 6,
+# with both late_cancel = true and false: at the primary j = 3 late cancels are effectively
+# inactive (G1 dev finding), so the ablation would be vacuous there. Reference cells for the
+# other blocks are the matching primary cells.
+name = "secondary"
+n_seeds = 2000
+policies = ["none", "edf", "mh", "lm_ack", "lm_verify", "lm_reconcile", "adaptive"]
+
+[[block]]  # score model: shifted up / down, noisy
+fault = ["none", "low", "high"]
+slack = ["tight", "normal"]
+k = [1]
+n = [32]
+score = ["shift_up", "shift_down", "noisy1"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]
+
+[[block]]  # jitter sign: early capture only
+fault = ["none", "low", "high"]
+slack = ["tight", "normal"]
+k = [1]
+n = [32]
+score = ["calibrated"]
+jitter = ["early3"]
+c = [0.5]
+late_cancel = [true]
+
+[[block]]  # collateral weight c = 1
+fault = ["none", "low", "high"]
+slack = ["tight", "normal"]
+k = [1]
+n = [32]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [1.0]
+late_cancel = [true]
+
+[[block]]  # larger incident, n = 128
+fault = ["none", "low", "high"]
+slack = ["tight", "normal"]
+k = [1]
+n = [128]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]
+
+[[block]]  # unlimited capacity, k = inf (with faults; the fault-free control is negative_control.toml)
+fault = ["none", "low", "high"]
+slack = ["tight", "normal"]
+k = [inf]
+n = [32]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]
+
+[[block]]  # late_cancel ablation at j = 6 (P4-P6): on/off, both cells here (G1, 2026-10-20)
+fault = ["none", "low", "high"]
+slack = ["tight", "normal"]
+k = [1]
+n = [32]
+score = ["calibrated"]
+jitter = ["uniform6"]
+c = [0.5]
+late_cancel = [true, false]

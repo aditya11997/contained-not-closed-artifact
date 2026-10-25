@@ -1,0 +1,39 @@
+# Named jitter and score models referenced by the experiment configs (configs/*.toml, WP4).
+# Fault presets live in configs/faults.toml. Every value here is hashed into each cell id and
+# into manifest.json, so changing a preset changes the cell ids of the runs that use it.
+#
+# uniform3 (j = 3) is the primary jitter, fixed on dev seeds at G1 (2026-10-20; see
+# docs/CHANGELOG_RESEARCH.md). It is a design choice, not calibrated to any card network.
+# uniform6 is used only by the secondary late_cancel ablation (at j = 3 late cancels are
+# effectively inactive: <= 0.515% of P5 loss recoverable on dev).
+
+[jitter.none]
+kind = "none"
+j = 0
+
+[jitter.uniform3]
+kind = "uniform"        # eps in {-3..3}: early or late capture
+j = 3
+
+[jitter.uniform6]
+kind = "uniform"        # eps in {-6..6}: secondary late_cancel ablation only (G1, 2026-10-20)
+j = 6
+
+[jitter.early3]
+kind = "early_only"     # eps in {-3..0}: jitter sign ablation (secondary)
+j = 3
+
+[score.calibrated]
+kind = "calibrated"
+
+[score.shift_up]
+kind = "shift"          # true suspect prob = clip(p + 0.2)
+delta = 0.2
+
+[score.shift_down]
+kind = "shift"
+delta = -0.2
+
+[score.noisy1]
+kind = "noisy"          # logistic(logit(p) + N(0, 1))
+sigma = 1.0

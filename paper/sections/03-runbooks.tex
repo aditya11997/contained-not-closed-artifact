@@ -1,0 +1,42 @@
+% Budget: 0.70 pp (AGENT) / 0.50 pp (ICRITO).
+% Sources: docs/BASELINES.md; p4/sched/*.py; p4/runbooks/*.py; docs/PREREG.md section 3.
+\section{Runbooks}\label{sec:runbooks}
+
+Seven runbooks share one planning objective and differ in two independent choices: which cancels to attempt, and what they accept as proof (Table~\ref{tab:runbooks}). All of them receive the same observations, capacity, authority and fault realization for a given seed, and none can read $D_i$ or $y_i$; automated tests enforce both properties.
+
+\subsection{Selection}
+A planner targets permitted payments with positive expected gain \lit{$g_i = a_i\,(p_i - c\,(1-p_i))$}, and a cancel is feasible only if it completes before $d_i$. P1 accepts payments in earliest-deadline order while they remain feasible. P2 uses a weighted variant of Moore's algorithm~\cite{moore1968njob}: in deadline order, it drops the scheduled payment with the least gain per unit of work until the set is feasible, then refills. P3--P6 select with the Lawler--Moore dynamic program~\cite{lawler1969functional}, which is exact for the single-machine weighted tardy-jobs problem, that is, for $k = 1$. For \lit{$k > 1$} we keep the single-worker selection and list-schedule it across workers in deadline order with a fill pass, which is a heuristic. Since P3--P6 share this scheduler, every contrast among them holds scheduling fixed and isolates the evidence rule. Section~\ref{sec:results:sched} reports what a different heuristic does to absolute loss at $k = 4$.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{Runbooks. All closures by P4--P6 rest on sink evidence (Section~\ref{sec:model:contract}).}
+\label{tab:runbooks}
+\begin{tabular}{@{}lll@{}}
+\toprule
+ID & Selection & Execution and closure rule \\
+\midrule
+P0 & none & no calls; reports exposure after $d_i$ \\
+P1 & earliest deadline & ACK-trust: reply or timeout closes \\
+P2 & weighted Moore & ACK-trust \\
+P3 & Lawler--Moore & ACK-trust \\
+P4 & Lawler--Moore & verify each timeout before the next cancel \\
+P5 & Lawler--Moore & fire all, then replay timeouts (reconcile) \\
+P6 & Lawler--Moore, re-planned & P5 with per-event re-planning \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Execution and evidence}
+The ACK-trust runbooks P1--P3 send their planned cancels in order and treat a \textsc{cancelled} reply or a timeout as success; a too-late reply or an unplanned payment counts as exposure. P4--P6 apply the evidence rule and differ only in when they seek proof.
+
+\emph{Verify-each} (P4) resolves a timeout before its worker moves on: it reads the status until the answer is definitive or $d_i$ passes, and re-sends the same key if the payment is still pending and the cancel still fits. Its assurance is synchronous, so a timeout costs worker time.
+
+\emph{Reconcile-after} (P5) fires every planned cancel first, then replays each timed-out cancel with its key until a definitive reply arrives or $d_i$ passes. This is the compensate-then-reconcile pattern of sagas~\cite{garciamolina1987sagas}, and the replay is safe because the processor returns the stored result for a known key~\cite{stripe2026idempotency}.
+
+\emph{Adaptive} (P6) is P5 plus re-planning: at every free-worker event it re-solves Lawler--Moore over the payments not yet attempted, using the actual times at which workers become free. It has no free parameters, and its design was fixed on development seeds before the holdout runs.
+
+After the last nominal capture time, P4--P6 run an accounting sweep, one status read per open payment, retried on timeout. With late cancellation, a sweep read that still finds a permitted, positive-gain payment pending triggers a cancel with the same key, because jitter can push a capture past $d_i$. P3 has neither the sweep nor late cancellation; we keep it that way because it is the frozen baseline, and the ablation in Section~\ref{sec:results:h1} bounds the effect.
+
+After a crash, every runbook restarts from its journal. P1--P3 re-send an intent that has no recorded result once, with its key (outbox recovery); P4--P6 treat it as a timeout and resolve it with sink evidence.

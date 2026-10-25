@@ -1,0 +1,13 @@
+{"actor":"procurement_agent","amount":125000,"error":null,"i":0,"key":"po-0","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A000","vendor":"acme-office"}
+{"actor":"procurement_agent","amount":90000,"error":null,"i":1,"key":"po-1","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A001","vendor":"globex-it"}
+{"actor":"procurement_agent","amount":150000,"error":null,"i":2,"key":"po-2","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A002","vendor":"globex-it"}
+{"actor":"procurement_agent","amount":38000,"error":null,"i":3,"key":"po-3","op":"create","phase":"pre_stop","replayed":false,"result":"PENDING","seq":null,"t":null,"timeout":false,"uid":"A003","vendor":"initech-supply"}
+{"actor":"procurement_agent","amount":null,"error":null,"i":4,"key":null,"op":"incident_stop","phase":"post_stop","replayed":false,"result":"REVOKED","seq":null,"t":0,"timeout":false,"uid":null,"vendor":null}
+{"actor":"procurement_agent","amount":64000,"error":null,"i":5,"key":"po-4","op":"create","phase":"post_stop","replayed":false,"result":"DENIED","seq":4,"t":0,"timeout":false,"uid":null,"vendor":"northwind-cafe"}
+{"actor":"procurement_agent","amount":12000,"error":null,"i":6,"key":"po-5","op":"create","phase":"post_stop","replayed":false,"result":"DENIED","seq":5,"t":0,"timeout":false,"uid":null,"vendor":"initech-supply"}
+{"actor":"procurement_agent","amount":50000,"error":null,"i":7,"key":"po-6","op":"create","phase":"post_stop","replayed":false,"result":"DENIED","seq":6,"t":0,"timeout":false,"uid":null,"vendor":"hooli-cloud"}
+{"actor":"remediation_operator","amount":null,"error":null,"i":8,"key":"INC-0/A001/cancel/v1","op":"cancel","phase":"post_stop","replayed":false,"result":"CANCELLED","seq":7,"t":1,"timeout":false,"uid":"A001","vendor":null}
+{"actor":"remediation_operator","amount":null,"error":null,"i":9,"key":null,"op":"status","phase":"post_stop","replayed":false,"result":"CAPTURED","seq":12,"t":17,"timeout":false,"uid":"A000","vendor":null}
+{"actor":"remediation_operator","amount":null,"error":null,"i":10,"key":null,"op":"status","phase":"post_stop","replayed":false,"result":null,"seq":null,"t":18,"timeout":true,"uid":"A002","vendor":null}
+{"actor":"remediation_operator","amount":null,"error":null,"i":11,"key":null,"op":"status","phase":"post_stop","replayed":false,"result":"CAPTURED","seq":13,"t":19,"timeout":false,"uid":"A002","vendor":null}
+{"actor":"remediation_operator","amount":null,"error":null,"i":12,"key":null,"op":"status","phase":"post_stop","replayed":false,"result":"CAPTURED","seq":14,"t":20,"timeout":false,"uid":"A003","vendor":null}

@@ -1,0 +1,2 @@
+{"i":0,"key":"INC-0/A002/cancel/v1","kind":"intent","op":"cancel","t":0,"uid":"A002"}
+{"effect_seq":5,"error":null,"i":1,"key":"INC-0/A002/cancel/v1","kind":"result","op":"cancel","recovered":false,"result":"CANCELLED","seq":4,"t":1,"timeout":false,"uid":"A002"}

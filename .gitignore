@@ -1,0 +1,33 @@
+results/raw/
+# Paper build outputs (paper/Makefile writes venue.tex, macros-generated.tex and copies fig1)
+paper/build/
+paper/venue.tex
+paper/macros-generated.tex
+paper/figs/fig1_timeline.pdf
+paper/*.aux
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out
+.venv/
+__pycache__/
+*.pyc
+.env
+*.key
+*.egg-info/
+.pytest_cache/
+.hypothesis/
+.ruff_cache/
+.DS_Store
+results/smoke/
+results/*/*/runs/
+# Holdout files too large for git; kept local, hashed in docs/RESULTS_ARCHIVE.md
+results/holdout/*/checker_verdicts.jsonl
+results/holdout/*/timing.csv
+!results/holdout/scaling/timing.csv
+# Pre-freeze Stripe runs: pre-freeze, not evidence (hashed in docs/RESULTS_ARCHIVE.md)
+results/conformance/stripe-20261023T*/
+# Dev runs: exploratory, not evidence; kept local, hashed in docs/RESULTS_ARCHIVE.md
+results/dev/

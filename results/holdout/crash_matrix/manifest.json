@@ -1,0 +1,99 @@
+{
+ "argv": [
+  "-m",
+  "experiments.crash_matrix",
+  "--partition",
+  "holdout",
+  "--n-seeds",
+  "2000",
+  "--out",
+  "results/holdout/crash_matrix"
+ ],
+ "c": 0.5,
+ "cells": [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "sweep_read_a",
+  "sweep_read_b",
+  "sweep_read_c",
+  "sweep_read_d",
+  "late_cancel_a",
+  "late_cancel_b",
+  "late_cancel_c",
+  "late_cancel_d"
+ ],
+ "checker": {
+  "not_ok": 0,
+  "runs": 528000
+ },
+ "config": {
+  "path": "/Users/aditya/p4/experiments/crash_matrix.py",
+  "sha256": "9bd29e06c1afae2ae561ce3b2ac3e25e8ae4163f0f73f0591869ff9755d71e5d"
+ },
+ "end": "2026-10-24T04:38:23+00:00",
+ "experiment": "crash_matrix",
+ "faults": {
+  "crash_outage": {
+   "f_req": 0.0,
+   "f_resp": 0.0,
+   "name": "crash_outage",
+   "outage_commit_prob": 0.5,
+   "outage_length": 3,
+   "outage_rate": 0.1
+  },
+  "high": {
+   "f_req": 0.05,
+   "f_resp": 0.15,
+   "name": "high",
+   "outage_commit_prob": 0.5,
+   "outage_length": 4,
+   "outage_rate": 0.02
+  },
+  "none": {
+   "f_req": 0.0,
+   "f_resp": 0.0,
+   "name": "none",
+   "outage_commit_prob": 0.0,
+   "outage_length": 0,
+   "outage_rate": 0.0
+  }
+ },
+ "git": {
+  "branch": "main",
+  "commit": "430c6a0279ffb97a7299dd23c210ffc102da1758",
+  "dirty": false
+ },
+ "k": [
+  1,
+  3
+ ],
+ "late_scenario": "ScenarioConfig(n=8, slack='tight', amount_min=100, amount_max=2000, amount_step=100, d_min=5, d_max=18, d_floor=2, s_min=1, s_max=5, p_min=0.18, p_max=0.92, permit_prob=0.94, q=1, jitter=JitterConfig(kind='uniform', j=15), score=ScoreConfig(kind='calibrated', delta=0.0, sigma=0.0))",
+ "packages": {
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "p4": "0.0.1",
+  "pandas": "3.0.6"
+ },
+ "partition": "holdout",
+ "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+ "policies": [
+  "lm_ack",
+  "lm_verify",
+  "lm_reconcile",
+  "adaptive"
+ ],
+ "prereg_tag_commit": "430c6a0279ffb97a7299dd23c210ffc102da1758",
+ "python": "3.13.11 (main, Jan 27 2026, 23:31:20) [Clang 21.1.4 ]",
+ "scenario": "ScenarioConfig(n=8, slack='tight', amount_min=100, amount_max=2000, amount_step=100, d_min=5, d_max=18, d_floor=2, s_min=1, s_max=5, p_min=0.18, p_max=0.92, permit_prob=0.94, q=1, jitter=JitterConfig(kind='uniform', j=6), score=ScoreConfig(kind='calibrated', delta=0.0, sigma=0.0))",
+ "schema": "p4.manifest/v1",
+ "seeds": {
+  "count": 2000,
+  "first": 900000,
+  "last": 901999
+ },
+ "start": "2026-10-24T04:03:45+00:00",
+ "workers": 10
+}

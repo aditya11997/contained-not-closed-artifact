@@ -1,0 +1,15 @@
+# POST HOC, EXPLORATORY (docs/POSTHOC.md PH2): the 24 primary cells with P3, P3b and P5.
+# Dev seeds only: --partition dev --seed-start 110000 (2,000 seeds). Not a frozen config.
+name = "posthoc_p3b"
+n_seeds = 2000
+policies = ["lm_ack", "lm_ack_retry", "lm_reconcile"]
+
+[[block]]
+fault = ["none", "low", "high"]
+slack = ["tight", "normal"]
+k = [1, 4]
+n = [8, 32]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]

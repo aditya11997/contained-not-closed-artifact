@@ -1,0 +1,44 @@
+{
+ "entries": [
+  {
+   "basis": "status_read",
+   "effect_seq": 8,
+   "evidence_result": "CAPTURED",
+   "evidence_seq": 9,
+   "reported_at": 17,
+   "state": "CLOSED_EXPOSURE",
+   "uid": "A000"
+  },
+  {
+   "basis": "cancel_reply",
+   "effect_seq": 5,
+   "evidence_result": "CANCELLED",
+   "evidence_seq": 4,
+   "reported_at": 1,
+   "state": "CLOSED_CANCELLED",
+   "uid": "A001"
+  },
+  {
+   "basis": "status_read",
+   "effect_seq": 7,
+   "evidence_result": "CAPTURED",
+   "evidence_seq": 10,
+   "reported_at": 19,
+   "state": "CLOSED_EXPOSURE",
+   "uid": "A002"
+  },
+  {
+   "basis": "status_read",
+   "effect_seq": 6,
+   "evidence_result": "CAPTURED",
+   "evidence_seq": 11,
+   "reported_at": 20,
+   "state": "CLOSED_EXPOSURE",
+   "uid": "A003"
+  }
+ ],
+ "evidence_bounded": true,
+ "incident_id": "INC-0",
+ "policy": "lm_reconcile",
+ "schema": "p4.report/v1"
+}

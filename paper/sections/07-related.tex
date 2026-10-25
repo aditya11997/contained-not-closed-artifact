@@ -1,0 +1,14 @@
+% Budget: 0.60 pp (AGENT) / 0.45 pp (ICRITO).
+% Placed after the evidence (decision 2026-10-24); the introduction carries a closest-work paragraph.
+% Every \cite key is logged in docs/REFERENCES_VERIFIED.md (make check enforces it).
+\section{Related Work}\label{sec:related}
+
+\emph{Revocation and authority.} Liu et al.\ separate issuer commit, transport acknowledgment, receiver persistence, gateway enforcement and effect prevention, and certify revocation only at the last stage~\cite{liu2026revocation}; that acknowledgment is not completion is their observation, which we carry over to the remediator's own calls. VERA computes which agents lose authority when one delegation edge is revoked~\cite{liu2026vera}. Both decide who may still act. We begin once that question is settled and ask what the agent's earlier actions left open.
+
+\emph{Control before the effect.} Bhadane et al.\ bind an execution allowance to the basis of an approval and re-check it at dispatch~\cite{bhadane2026runtime}. They note that a lost acknowledgment can let a valid retry commit twice and leave compensation and reconciliation outside their guarantee, which is the space this paper measures. Peng and Wu identify stale authorization as the core failure when agents execute refunds and transfers, and coordinate policy state with effects~\cite{peng2026stateful}. These mechanisms govern effects before dispatch; ours governs those already dispatched when the stop arrives.
+
+\emph{Recovery and rollback.} Wu et al.\ show that restoring an agent checkpoint can resume an execution whose external effects were never recorded, and demonstrate a double payment~\cite{wu2026safe}. Zhang and Liu treat recovery as an explicit decision, since retrying a tool call may duplicate its effect~\cite{zhang2026recoverability}. Our resumption concerns a different component: the remediator, restarted from a write-ahead journal behind processor-side idempotency, and graded by an independent checker.
+
+\emph{Agent payments.} An analysis of the Agent Payments Protocol finds that a validly signed mandate can still encode an unintended payment when the context before signing is manipulated~\cite{aviv2026ap2}. Cryptographic authorization therefore does not remove the need to remediate after the fact.
+
+\emph{Compensation and scheduling.} Sagas pair each step with a compensating transaction~\cite{garciamolina1987sagas}; P5 applies that pattern with reconciliation by replay. Choosing which cancels to attempt is weighted tardy-job scheduling, solved exactly on one machine by Lawler and Moore~\cite{lawler1969functional}, while Moore's algorithm solves the unweighted case and underlies P2's weighted heuristic~\cite{moore1968njob}. We use both as baselines and claim nothing new about them.

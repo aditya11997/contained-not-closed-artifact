@@ -1,0 +1,5 @@
+{"attempt": 0, "fault": "ok", "op": "cancel", "uid": "A001"}
+{"attempt": 0, "fault": "ok", "op": "status", "uid": "A000"}
+{"attempt": 0, "fault": "drop_req", "op": "status", "uid": "A002"}
+{"attempt": 1, "fault": "ok", "op": "status", "uid": "A002"}
+{"attempt": 0, "fault": "ok", "op": "status", "uid": "A003"}

@@ -1,0 +1,38 @@
+{
+ "by_cell": {
+  "6e96c5cc8c9b": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "9f72de700400": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "e2a42df5b4f7": {
+   "not_ok": 0,
+   "runs": 14000
+  },
+  "f60cfe6da7fe": {
+   "not_ok": 0,
+   "runs": 14000
+  }
+ },
+ "counts": {
+  "anchor_mismatch": 0,
+  "cancel_after_capture": 0,
+  "chain_broken": 0,
+  "duplicate_effects": 0,
+  "false_closure": 0,
+  "false_exposure": 0,
+  "inconsistent_replies": 0,
+  "key_violations": 0,
+  "malformed_lines": 0,
+  "non_monotone": 0,
+  "report_malformed": 0,
+  "revoked_actor_effects": 0,
+  "truth_mismatch": 0,
+  "unsupported_evidence": 0
+ },
+ "not_ok": 0,
+ "runs": 56000
+}

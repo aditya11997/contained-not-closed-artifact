@@ -1,0 +1,130 @@
+[
+  {
+    "file": ".github/workflows/python-baseline.yml",
+    "sha256": "d75a1dd83b7dc2d65d72da28dd636de5429d90e8c9bffc36525370fe5ec58665"
+  },
+  {
+    "file": ".gitignore",
+    "sha256": "d970e2ac808c979968646e39315324caa6aa5a0b3d4cdbf8d5eda1bc21489302"
+  },
+  {
+    "file": "AGENTS.md",
+    "sha256": "a386b6e9e32829350f740e1fe8d32f44ee165d0f572af0c756c7b64ea0d5c2de"
+  },
+  {
+    "file": "CODEX_START_HERE.md",
+    "sha256": "c24c55e73b002b59080b7a7c9bfcd1cb8fd552cb456099085aa3888cae0a87f1"
+  },
+  {
+    "file": "README.md",
+    "sha256": "9ea12926cb812e4eddc179b597ad147f8b9c80f7d2a7a0e57445b97cb64afcd7"
+  },
+  {
+    "file": "VERIFICATION.txt",
+    "sha256": "62ba9c8a5deb35db561710a66d5080bf9352ef016dc344a2acf628c3f802f6f0"
+  },
+  {
+    "file": "docs/CLOUD_DEPLOYMENT_REVIEW.md",
+    "sha256": "7a1343a1559639401d5e5f01263decf23d3c7a829a1e8f30c725d2351560f34e"
+  },
+  {
+    "file": "docs/MILESTONE_01.md",
+    "sha256": "6e47ccf28523e0fc936a4b6f0b8d3142429f7df62efc5ef7497c7415ec2cf3d3"
+  },
+  {
+    "file": "docs/PROJECT_DECISIONS.md",
+    "sha256": "901296835dcc1be3459ea9d404383ca926d40cccea3e078899c620a128e9f0e9"
+  },
+  {
+    "file": "docs/SCIENTIFIC_GUARDRAILS.md",
+    "sha256": "4f24e93d557e4d7cb04ef9ee5b8244fb1fae46c676297bf21b0fa9efe7f06a79"
+  },
+  {
+    "file": "references/Earlier_Causal_Containment_Protocol.md",
+    "sha256": "62fe952a6c0aa0cc436203d97405d95b2825ce2a337200fdd040b55076d848bc"
+  },
+  {
+    "file": "references/P4_Execution_Playbook.docx",
+    "sha256": "2b929edfbf446a785d29f1fd33456b22fed35c1b57b059a4df91df3aed3b0ad3"
+  },
+  {
+    "file": "research_code/README.md",
+    "sha256": "f23e4156dd1207aea45cd13fe790b5011c7f81f8a1ba0a51f0a30512ac6d7718"
+  },
+  {
+    "file": "research_code/RESEARCH_PROTOCOL_TEMPLATE.md",
+    "sha256": "06e18f837c954c4a08a07bde274aefbf3958ec0b3b70c18baee94eadc310473b"
+  },
+  {
+    "file": "research_code/__pycache__/test_lab.cpython-313.pyc",
+    "sha256": "aa60a970c34ab775ae5f887870630914f15d7f819c1420c53608e1bd7a04d034"
+  },
+  {
+    "file": "research_code/demo_recovery.py",
+    "sha256": "b41497070e63a489939a83e4fc74141e3bb867fac1cf5583d3cb4031eeabc99d"
+  },
+  {
+    "file": "research_code/p4lab/__init__.py",
+    "sha256": "b1e20403b8cdd91e40fee4d35bcc6bbdc2d3ab50a808db2f2d0efea95905fb57"
+  },
+  {
+    "file": "research_code/p4lab/__pycache__/__init__.cpython-313.pyc",
+    "sha256": "38186096533902a481d3efe235bebff740c43f90aef5df09f18ef09db36677a7"
+  },
+  {
+    "file": "research_code/p4lab/__pycache__/assurance.cpython-313.pyc",
+    "sha256": "a150f7f9e97192aac35edd8424b0dbfeabf8606cb08e534c8612c40b6c495db6"
+  },
+  {
+    "file": "research_code/p4lab/__pycache__/experiments.cpython-313.pyc",
+    "sha256": "5d7af580bfa1170b292b0add66864c7bef5c5ae0e6ba1bd0b7e8b11324e741d0"
+  },
+  {
+    "file": "research_code/p4lab/__pycache__/model.cpython-313.pyc",
+    "sha256": "500a4b30210dc822d9be90823db093e087d5dfbb46026ce8a2e8ead16c93bff1"
+  },
+  {
+    "file": "research_code/p4lab/__pycache__/policies.cpython-313.pyc",
+    "sha256": "70c09a475ea937040d2b61d284044840339d164921fa7562f0094a98d6a0a93a"
+  },
+  {
+    "file": "research_code/p4lab/assurance.py",
+    "sha256": "c108c67cf382653b3bedf47c2a1e7af31149479c110128888eaaeb835153c796"
+  },
+  {
+    "file": "research_code/p4lab/experiments.py",
+    "sha256": "0c44930ad1520c5081ab8724b7ccbd2602702221c8b076fea36688817ea18c8a"
+  },
+  {
+    "file": "research_code/p4lab/model.py",
+    "sha256": "9b2e586d31510e3fc94f2c2a79eb06c8ecab15a1a1ae102ab4dc73d31906fe6c"
+  },
+  {
+    "file": "research_code/p4lab/policies.py",
+    "sha256": "70d0f6882a682660f4a76042e9b2b6f1bc60408597306d28bbd5547edf51fa02"
+  },
+  {
+    "file": "research_code/results/main/summary.csv",
+    "sha256": "85aeb125f47f1519abea9f922f9282f227501c6ebcbf7b9ab9781e2d31dd32fe"
+  },
+  {
+    "file": "research_code/results/main/trials.csv",
+    "sha256": "e84b7f1c1b5262972bbb9b301b432a9dd2f220166d6e3e39875033e852eed30a"
+  },
+  {
+    "file": "research_code/results/pilot/summary.csv",
+    "sha256": "0be368c5b5f09f7b97bd8f62d955a6837de3fa7c904449ebc38ccf57a236071a"
+  },
+  {
+    "file": "research_code/results/pilot/trials.csv",
+    "sha256": "5a8381adf8b02f680322de921b533a488814bd96af7529eba810467d5f198ac1"
+  },
+  {
+    "file": "research_code/results/pilot_summary.png",
+    "sha256": "764e2fb1d48dfbd6477153c475cdf0535ad54cf21782b3b5d07be25978ba5386"
+  },
+  {
+    "file": "research_code/test_lab.py",
+    "sha256": "3f0e65b0068ad63f2a5a7755fc8f6956dd91e53d52837b6b7ca52f30559c7bf7"
+  }
+]

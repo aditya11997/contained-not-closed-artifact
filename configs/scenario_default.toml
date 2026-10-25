@@ -1,0 +1,25 @@
+# Default scenario parameters (p4.sim.scenario.ScenarioConfig). Ranges follow the legacy pilot.
+# Times are integer simulated units, not card-network deadlines.
+n = 8
+slack = "normal"          # tight = 0.7, normal = 1.0, loose = 1.5 (scales d_nominal)
+amount_min = 100
+amount_max = 2000
+amount_step = 100
+d_min = 5                 # nominal capture time base range, before slack scaling
+d_max = 18
+d_floor = 2
+s_min = 1                 # cancel cost (maker-checker approval + call)
+s_max = 5
+p_min = 0.18              # observed risk score range
+p_max = 0.92
+permit_prob = 0.94        # probability remediation is permitted for a payment
+q = 1                     # status-read cost
+
+[jitter]
+kind = "none"             # none | uniform (eps in {-j..j}) | early_only (eps in {-j..0})
+j = 0
+
+[score]
+kind = "calibrated"       # calibrated | shift (delta) | noisy (sigma, logit scale)
+delta = 0.0
+sigma = 0.0

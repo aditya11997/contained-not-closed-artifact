@@ -1,0 +1,64 @@
+% Budget: 1.20 pp (AGENT) / 0.90 pp (ICRITO).
+% Sources: docs/REVAMP_PLAN.md section 2; p4/contract.py; p4/sim/protocol.py; p4/runbooks/base.py;
+% p4/journal.py; checker/check.py (_check_report, _check_effect); docs/STRIPE_MAPPING.md.
+% Fully symbolic: parameter VALUES (fault presets, slack, c, k, n) belong to Section IV.
+\section{Problem Model and Disposition Contract}\label{sec:model}
+
+An agent that is revoked mid-run stops creating effects, but the effects it created before the stop keep moving toward finality. We model that residue and state what a remediator must show before it may call an incident closed.
+
+\subsection{Pending effects after revocation}\label{sec:model:effects}
+Revocation happens at time \lit{$t_0 = 0$}. Before it, the agent created payments \lit{$i \in \{1,\dots,n\}$} under manual capture: each is authorized and held, and the merchant captures it later~\cite{stripe2026hold}. Payment $i$ has an amount $a_i$, a nominal capture time $d_i$ and a risk score $p_i$, all observed by the remediator, and a remediation permission $\pi_i$. Its actual capture time $D_i = d_i + \varepsilon_i$ and its label $y_i \in \{\text{suspect}, \text{legit}\}$ are hidden; the jitter $\varepsilon_i$ may be negative, so a capture can arrive early. Times are abstract simulation units, not card-network deadlines.
+
+We take containment as given: after \lit{$t_0$}, every call by the revoked identity is denied, so it commits no new effect, which is condition C5 of Liu et al.~\cite{liu2026revocation} for this agent. Their contract decides when revocation is complete. Ours begins at that point and asks what is still open.
+
+\subsection{Remediator, sink and transport faults}\label{sec:model:faults}
+A separate remediation authority may cancel and read, but never create or capture. It runs $k$ parallel workers; a cancel occupies a worker for $s_i$ units (approval plus call) and a status read for $q$ units, and $k = \infty$ serves as a control.
+
+The processor (the \emph{sink}) owns the clock and an append-only, hash-chained event log. A cancel applied before $D_i$ moves the payment from \textsc{pending} to \textsc{cancelled}; at $D_i$ a still-pending payment becomes \textsc{captured}. Both states are absorbing, since refunds and disputes lie outside the model. Idempotency keys are scoped to the calling actor and bound to the request: replaying a key returns the stored result without a second effect, and a key reused for a different request is an error, as in Stripe's API~\cite{stripe2026idempotency}. A replay is therefore also a status probe.
+
+Between remediator and sink, a transport fault layer acts on each call. Under \texttt{drop\_req}, the request never arrives. Under \texttt{drop\_resp}, the sink commits but the reply is lost: a lost acknowledgment. During an outage window, calls time out, the sink commits a cancel with probability $r$, and status reads fail. One property holds throughout:
+
+\smallskip
+\noindent\textbf{Reply integrity.} \emph{Faults delete or delay replies; they never alter a reply that is delivered.}
+\smallskip
+
+\noindent The remediator itself may crash at any of four points of a call: before sending, after sending, after receiving the reply, or after journaling it. It keeps a write-ahead journal that records each intent before sending and each result after the reply. A restarted instance rebuilds its state from the journal, re-plans from the current time, and treats an intent without a recorded result as a timeout. Each payment has one fixed cancel key per incident, so a re-sent cancel cannot create a second effect.
+
+\subsection{Loss and false closure}\label{sec:model:loss}
+Let $\mathcal{C}$ and $\mathcal{X}$ be the payments whose log ends in \textsc{cancelled} and \textsc{captured}. The loss of an episode is
+\begin{equation}\label{eq:loss}
+  \textstyle L \;=\; \sum_{i \in \mathcal{X},\, y_i = \text{suspect}} a_i \;+\; c \sum_{i \in \mathcal{C},\, y_i = \text{legit}} a_i ,
+\end{equation}
+where $c$ weighs collateral cancellation of legitimate payments. Only the evaluator sees $y_i$ and computes $L$; runbooks never do. A \emph{false closure} is a report of \textsc{closed\_cancelled} for a payment whose log holds no \textsc{cancelled} effect before $D_i$. A \emph{false exposure} is a report of \textsc{closed\_exposure} for a payment that was never captured.
+
+\subsection{Disposition contract}\label{sec:model:contract}
+At a horizon after the last capture time, a runbook returns one disposition per payment (Table~\ref{tab:states}). Each closed entry carries two log sequence numbers: the line of the reply or read it relies on, and the \textsc{cancelled} or \textsc{captured} effect line that reply reports.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Disposition states and the evidence an evidence-bounded runbook needs for each.}
+\label{tab:states}
+\begin{tabular}{@{}lll@{}}
+\toprule
+State & Meaning & Required evidence \\
+\midrule
+\textsc{closed\_cancelled} & prevented & reply, replay or read $=$ \textsc{cancelled} \\
+\textsc{closed\_exposure} & accounted for & reply, replay or read $=$ \textsc{captured} \\
+\textsc{unresolved\_pending} & open & last read $=$ \textsc{pending} \\
+\textsc{unresolved\_unknown} & open & no definitive reply \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The \emph{evidence rule} binds the evidence-bounded runbooks (P4--P6): a payment may be closed only on a delivered sink reply, replay or status read that names the closing state. ACK-trust runbooks (P1--P3) may close without sink evidence: a timed-out cancel counts as success, and a payment they never attempted counts as captured at its nominal deadline. The first choice mirrors an operations dashboard that marks a job done once the cancel has been sent.
+
+\begin{proposition}\label{prop:evidence}
+Under reply integrity, a report whose closed entries all satisfy the evidence rule contains no false closure and no false exposure, including after a crash and restart from the journal.
+\end{proposition}
+
+\begin{IEEEproof}[Proof sketch]
+The sink emits a \textsc{cancelled} reply or read only after it has written a \textsc{cancelled} effect, and it writes that effect only before $D_i$. Since the state is absorbing, it is still the final state at the horizon. By reply integrity, the delivered reply is the one the sink emitted, so a closure resting on it is true. The same argument covers \textsc{captured} and \textsc{closed\_exposure}. A restarted instance closes only on journaled results that pass the same rule, and it treats an intent without a result as a timeout, which closes nothing. The fixed cancel key makes any re-send a replay rather than a second effect.
+\end{IEEEproof}
+
+The proposition holds by construction, so zero false closures for P4--P6 verify the implementation; they are not an empirical discovery. The independent checker re-derives every disposition from the hash-chained log in a separate process (Section~\ref{sec:design}), and Section~\ref{sec:results:h5} tests the crash clause for one crash per episode. What the contract leaves open is the price: what evidence-bounded disposition costs in loss under deadlines, compared with trusting acknowledgments.

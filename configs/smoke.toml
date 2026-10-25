@@ -1,0 +1,24 @@
+# Smoke test and golden file (tests/golden): 2 cells x 20 dev seeds x 7 policies.
+name = "smoke"
+n_seeds = 20
+policies = ["none", "edf", "mh", "lm_ack", "lm_verify", "lm_reconcile", "adaptive"]
+
+[[block]]
+fault = ["none"]
+slack = ["tight"]
+k = [1]
+n = [8]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]
+
+[[block]]
+fault = ["high"]
+slack = ["tight"]
+k = [4]
+n = [8]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]

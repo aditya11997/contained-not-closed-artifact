@@ -1,0 +1,27 @@
+# Transport fault presets (p4.sim.faults.FaultConfig).
+# These values are DESIGN CHOICES used as sensitivity bands, not calibrated failure rates.
+# f_req/f_resp follow WP1. The outage parameters (outage_rate = Poisson lambda per time unit,
+# outage_length = L, outage_commit_prob = r) were fixed on dev seeds at G1 (2026-10-20) after a
+# sensitivity grid (configs/dev/g1_*.toml): H1/H2 were stable around these values. They are
+# frozen in PREREG.md. Never tune on holdout. See docs/CHANGELOG_RESEARCH.md (G1 entry).
+
+[none]
+f_req = 0.0
+f_resp = 0.0
+outage_rate = 0.0
+outage_length = 0
+outage_commit_prob = 0.0
+
+[low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.005
+outage_length = 2
+outage_commit_prob = 0.5
+
+[high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.02
+outage_length = 4
+outage_commit_prob = 0.5

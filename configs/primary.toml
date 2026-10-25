@@ -1,0 +1,17 @@
+# Primary grid (REVAMP_PLAN §4; PREREG_DRAFT §4): fault x slack x k x n = 24 cells.
+# Fixed: score calibrated, jitter uniform3 (j = 3, fixed at G1), c = 0.5, late_cancel = true.
+# The Holm family is {P5-P3, P4-P3} x these cells (analysis/stats.py PRIMARY_CONTRASTS, decided
+# 2026-10-22); P6-P5 (H3) is reported over these cells as a secondary analysis.
+name = "primary"
+n_seeds = 2000
+policies = ["none", "edf", "mh", "lm_ack", "lm_verify", "lm_reconcile", "adaptive"]
+
+[[block]]
+fault = ["none", "low", "high"]
+slack = ["tight", "normal"]
+k = [1, 4]
+n = [8, 32]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]

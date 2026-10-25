@@ -1,0 +1,17 @@
+% Budget: 0.90 pp (AGENT) / 0.70 pp (ICRITO), together with title and abstract.
+% Outline source: docs/PAPER_OUTLINE.md section 1; REVAMP_PLAN section 1 (contribution 3 struck at G2).
+\section{Introduction}\label{sec:intro}
+
+Agents now place orders and initiate payments on behalf of people and firms, and agent payment protocols sign the mandates that authorize them~\cite{aviv2026ap2}. When such an agent misbehaves, the first response is to revoke it. Revocation stops what the agent does next. It does not stop what the agent already did: payments it created before the stop are held under manual capture~\cite{stripe2026hold} and become final when the merchant captures them, minutes or days later.
+
+Someone has to dispose of those payments. In practice, a separate remediation authority cancels the suspect ones before capture, with a few operators, cancel calls that take time, and a processor interface whose replies are sometimes lost. Operations tooling then reports the incident closed. If it counts a cancel as done once it has been sent, it can report as prevented a payment that the merchant captured. Liu et al.\ showed that a transport acknowledgment does not establish that a revocation completed~\cite{liu2026revocation}. The same holds for the remediator's own calls, and it raises a question that their contract leaves open: once the agent is contained, what does it cost to close the incident only on evidence, under deadlines?
+
+We answer with a contract, a pre-registered benchmark and a crash study:
+\begin{itemize}
+  \item A \emph{disposition contract} for pre-revocation effects with finality deadlines. It separates prevented, accounted-for and unresolved payments and admits a closure only on processor-side evidence; under a stated reply-integrity assumption, a report that obeys it contains no false closure (Section~\ref{sec:model}).
+  \item A measured \emph{cost of assurance}. Across \NRunsPrimary{} primary runs graded by an independent checker, a runbook that trusts acknowledgments closes falsely in every faulty cell. Verifying each timeout before the next cancel costs loss when workers are scarce, while reconciling after all cancels are sent is never significantly worse and closes nothing falsely. Adaptive re-planning adds nothing measurable, a pre-registered null (Section~\ref{sec:results}).
+  \item \emph{Safe resumption of remediation}: restarted from a write-ahead journal behind processor-side idempotency, evidence-bounded runbooks survive one crash per episode at every instrumented call point (Section~\ref{sec:results:h5}).
+  \item A reproducible artifact: simulator, independent checker, Stripe test-mode conformance suite and a case study with a revoked language-model agent (Section~\ref{sec:casestudy}).
+\end{itemize}
+
+The closest work addresses neighbouring questions. Liu et al.\ decide when revocation is complete~\cite{liu2026revocation}; we start where their contract ends. Bhadane et al.\ re-check an approval before dispatch~\cite{bhadane2026runtime}; we handle what was dispatched before the stop. Wu et al.\ attack checkpoint and rollback of the agent itself~\cite{wu2026safe}; we resume the remediator. Section~\ref{sec:related} positions the rest. Scheduling is not a contribution: the Lawler--Moore algorithm~\cite{lawler1969functional} is our baseline.

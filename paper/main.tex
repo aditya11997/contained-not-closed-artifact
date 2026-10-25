@@ -1,0 +1,54 @@
+% Contained Is Not Closed -- main file.
+% Build with `make` in paper/ (see paper/README.md). Do not edit venue.tex or
+% macros-generated.tex by hand: both are written by the Makefile.
+\documentclass[conference,10pt]{IEEEtran}
+
+% ---- venue switch (generated: make agent | make icrito | make final) ----
+\IfFileExists{venue.tex}{\input{venue.tex}}{%
+  \newif\ifanon\anonfalse
+  \newif\ificrito\icritofalse
+  \newif\iffinal\finalfalse
+  \newcommand{\PageLimit}{8}}
+
+% ---- packages (IEEEtran-compatible only; nothing that changes margins, fonts or spacing) ----
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{siunitx}
+\sisetup{group-separator={,},group-minimum-digits=4}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage[hidelinks]{hyperref}   % load last
+
+\graphicspath{{figs/}}
+
+% ---- macros ----
+\input{macros-paper.tex}        % hand-written: \MISSING, \CONFIRM, \CITEPENDING, \TODO, \lit
+\input{macros-generated.tex}    % generated: \input of every paper/generated/**/*.tex with macros
+\input{meta.tex}                % title, author block, artifact link
+
+\begin{document}
+
+\title{\PaperTitle}
+\AuthorBlock
+\maketitle
+
+\input{sections/00-abstract}
+\input{sections/01-introduction}
+\input{sections/02-model-contract}
+\input{sections/03-runbooks}
+\input{sections/04-design}
+\input{sections/05-results}
+\input{sections/06-conformance-casestudy}
+\input{sections/07-related}
+\input{sections/08-threats}
+\input{sections/09-conclusion}
+\input{sections/99-acknowledgment}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

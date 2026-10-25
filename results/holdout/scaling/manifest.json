@@ -1,0 +1,430 @@
+{
+ "argv": [
+  "-m",
+  "experiments.run",
+  "--config",
+  "configs/scaling.toml",
+  "--partition",
+  "holdout",
+  "--out",
+  "results/holdout/scaling"
+ ],
+ "cells": [
+  {
+   "cell_id": "347a7eaac047",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 4,
+    "late_cancel": true,
+    "n": 8,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 8,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "ba6377eeb4cf",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 4,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "f7017c3547d6",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 4,
+    "late_cancel": true,
+    "n": 128,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 128,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "8814981feec7",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 4,
+    "late_cancel": true,
+    "n": 512,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 512,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "8dbff20039b1",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 4,
+    "late_cancel": true,
+    "n": 8,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 8,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "6bc46fb59a99",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 4,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "d912d0a9a329",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 4,
+    "late_cancel": true,
+    "n": 128,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 128,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "7e9d49ad9681",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 4,
+    "late_cancel": true,
+    "n": 512,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 512,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  }
+ ],
+ "checker": {
+  "not_ok": 0,
+  "runs": 5600
+ },
+ "config": {
+  "path": "configs/scaling.toml",
+  "sha256": "8b43ab2e92fea697d7b38042ae802ed56f131596134fb26c99f0e624fb5d898b"
+ },
+ "end": "2026-10-24T04:03:31+00:00",
+ "experiment": "scaling",
+ "git": {
+  "branch": "main",
+  "commit": "430c6a0279ffb97a7299dd23c210ffc102da1758",
+  "dirty": false
+ },
+ "keep_runs": true,
+ "packages": {
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "p4": "0.0.1",
+  "pandas": "3.0.6"
+ },
+ "partition": "holdout",
+ "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+ "policies": [
+  "none",
+  "edf",
+  "mh",
+  "lm_ack",
+  "lm_verify",
+  "lm_reconcile",
+  "adaptive"
+ ],
+ "prereg_tag_commit": "430c6a0279ffb97a7299dd23c210ffc102da1758",
+ "presets_sha256": {
+  "faults.toml": "c942377f6886e997a1a9bdda3c2502badff05398e105c3809497f0d8a2f832cc",
+  "presets.toml": "a4f899974155c9c7775895552c5d6b935e0b36ff2a21db71cff1b4f12c221f02",
+  "scenario_default.toml": "f3807eb5fd9ca19a9924c8fb0ed7492ce768e3687faeff0284a48fbeefa84b4a"
+ },
+ "python": "3.13.11 (main, Jan 27 2026, 23:31:20) [Clang 21.1.4 ]",
+ "schema": "p4.manifest/v1",
+ "seeds": {
+  "count": 100,
+  "first": 900000,
+  "last": 900099
+ },
+ "start": "2026-10-24T04:00:47+00:00",
+ "workers": 10
+}

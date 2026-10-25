@@ -1,0 +1,233 @@
+{
+ "by_cell": {
+  "a/adaptive": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "a/lm_ack": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "a/lm_reconcile": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "a/lm_verify": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "b/adaptive": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "b/lm_ack": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "b/lm_reconcile": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "b/lm_verify": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "c/adaptive": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "c/lm_ack": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "c/lm_reconcile": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "c/lm_verify": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "d/adaptive": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "d/lm_ack": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "d/lm_reconcile": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "d/lm_verify": {
+   "crashed": 12000,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "e/adaptive": {
+   "crashed": 3949,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "e/lm_ack": {
+   "crashed": 2808,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "e/lm_reconcile": {
+   "crashed": 3949,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "e/lm_verify": {
+   "crashed": 3938,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_a/adaptive": {
+   "crashed": 3126,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_a/lm_reconcile": {
+   "crashed": 3170,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_a/lm_verify": {
+   "crashed": 3803,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_b/adaptive": {
+   "crashed": 3126,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_b/lm_reconcile": {
+   "crashed": 3170,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_b/lm_verify": {
+   "crashed": 3803,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_c/adaptive": {
+   "crashed": 3126,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_c/lm_reconcile": {
+   "crashed": 3170,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_c/lm_verify": {
+   "crashed": 3803,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_d/adaptive": {
+   "crashed": 3126,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_d/lm_reconcile": {
+   "crashed": 3170,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "late_cancel_d/lm_verify": {
+   "crashed": 3803,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_a/adaptive": {
+   "crashed": 11829,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_a/lm_reconcile": {
+   "crashed": 11837,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_a/lm_verify": {
+   "crashed": 11835,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_b/adaptive": {
+   "crashed": 11829,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_b/lm_reconcile": {
+   "crashed": 11837,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_b/lm_verify": {
+   "crashed": 11835,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_c/adaptive": {
+   "crashed": 11829,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_c/lm_reconcile": {
+   "crashed": 11837,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_c/lm_verify": {
+   "crashed": 11840,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_d/adaptive": {
+   "crashed": 11829,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_d/lm_reconcile": {
+   "crashed": 11837,
+   "not_ok": 0,
+   "runs": 12000
+  },
+  "sweep_read_d/lm_verify": {
+   "crashed": 11840,
+   "not_ok": 0,
+   "runs": 12000
+  }
+ },
+ "counts": {
+  "chain_broken": 0,
+  "duplicate_effects": 0,
+  "false_closure": 21644,
+  "integrity_problems": 0
+ },
+ "crashed": 389054,
+ "not_ok": 0,
+ "runs": 528000
+}

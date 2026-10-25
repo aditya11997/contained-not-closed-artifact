@@ -1,0 +1,20 @@
+% Hand-written paper macros. Keep this file tiny; numbers never go here.
+% Draft mode: markers render in colour. Final mode (make final): every marker is a hard error.
+
+\iffinal
+  \newcommand{\MISSING}[1]{\errmessage{MISSING: #1}}
+  \newcommand{\CONFIRM}[1]{\errmessage{CONFIRM: #1}}
+  \newcommand{\CITEPENDING}[1]{\errmessage{CITEPENDING: #1}}
+  \newcommand{\TODO}[1]{\errmessage{TODO: #1}}
+\else
+  \newcommand{\MISSING}[1]{\textcolor{red}{\textbf{[MISSING: #1]}}}
+  \newcommand{\CONFIRM}[1]{\textcolor{orange}{[CONFIRM: #1]}}
+  \newcommand{\CITEPENDING}[1]{\textcolor{red}{[CITE PENDING: #1]}}
+  \newcommand{\TODO}[1]{\textcolor{blue}{[TODO: #1]}}
+\fi
+
+\newtheorem{proposition}{Proposition}
+
+% \lit{...}: a literal that contains digits on purpose (e.g. scheduling notation).
+% The number lint skips its argument; every use must be justifiable in review.
+\newcommand{\lit}[1]{#1}

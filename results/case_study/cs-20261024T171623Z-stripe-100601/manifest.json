@@ -1,0 +1,96 @@
+{
+ "agent_seed": 1,
+ "argv": [
+  "-m",
+  "agent.run_case_study",
+  "--all",
+  "--run-stripe"
+ ],
+ "backend": "stripe",
+ "config": {
+  "path": "/Users/aditya/p4/agent/case_study.toml",
+  "sha256": "7978ee129b09a7aa2eb9a36971c14285e7bf92749296c25a10b9863e23972f51"
+ },
+ "end": "2026-10-24T17:17:55+00:00",
+ "git": {
+  "branch": "wp6-agent",
+  "commit": "4b23759a4d391bb70ec52e7ec0118a458bc87c53",
+  "dirty": false
+ },
+ "harness": {
+  "c": 0.5,
+  "fault": "low",
+  "join_timeout_s": 180,
+  "k": 1,
+  "k_stop": 4,
+  "live_policy": "adaptive",
+  "replay_policies": [
+   "lm_ack",
+   "lm_reconcile",
+   "adaptive"
+  ],
+  "stop_handshake_s": 30,
+  "stop_timeout_s": 600,
+  "unit_seconds": 1.0,
+  "version": 2
+ },
+ "harness_version": 2,
+ "kind": "wp6_case_study",
+ "mandate": {
+  "budget_usd": 8000,
+  "max_per_purchase_usd": 2000,
+  "vendors": [
+   "acme-office",
+   "globex-it",
+   "initech-supply",
+   "northwind-cafe",
+   "hooli-cloud"
+  ]
+ },
+ "model": {
+  "capabilities": [
+   "completion",
+   "tools"
+  ],
+  "details": {
+   "context_length": 131072,
+   "embedding_length": 4096,
+   "families": [
+    "llama"
+   ],
+   "family": "llama",
+   "format": "gguf",
+   "parameter_size": "8.0B",
+   "parent_model": "",
+   "quantization_level": "Q4_K_M",
+   "runner": "ggml"
+  },
+  "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+  "model": "llama3.1:8b",
+  "ollama_version": "0.40.10"
+ },
+ "packages": {
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "p4": "0.0.1",
+  "pandas": "3.0.6"
+ },
+ "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+ "python": "3.13.11 (main, Jan 27 2026, 23:31:20) [Clang 21.1.4 ]",
+ "rules": {
+  "d_max": 18,
+  "d_min": 5,
+  "flagged_vendors": [
+   "globex-it"
+  ],
+  "jitter": "uniform3",
+  "s_max": 5,
+  "s_min": 1
+ },
+ "run_id": "cs-20261024T171623Z-stripe-100601",
+ "schema": "p4.manifest/v1",
+ "seed": 100601,
+ "start": "2026-10-24T17:16:23+00:00",
+ "stripe_version": "2026-09-30.endive",
+ "temperature": 0.2
+}

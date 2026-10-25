@@ -1,0 +1,54 @@
+{
+ "by_cell": {
+  "347a7eaac047": {
+   "not_ok": 0,
+   "runs": 700
+  },
+  "6bc46fb59a99": {
+   "not_ok": 0,
+   "runs": 700
+  },
+  "7e9d49ad9681": {
+   "not_ok": 0,
+   "runs": 700
+  },
+  "8814981feec7": {
+   "not_ok": 0,
+   "runs": 700
+  },
+  "8dbff20039b1": {
+   "not_ok": 0,
+   "runs": 700
+  },
+  "ba6377eeb4cf": {
+   "not_ok": 0,
+   "runs": 700
+  },
+  "d912d0a9a329": {
+   "not_ok": 0,
+   "runs": 700
+  },
+  "f7017c3547d6": {
+   "not_ok": 0,
+   "runs": 700
+  }
+ },
+ "counts": {
+  "anchor_mismatch": 0,
+  "cancel_after_capture": 0,
+  "chain_broken": 0,
+  "duplicate_effects": 0,
+  "false_closure": 4467,
+  "false_exposure": 0,
+  "inconsistent_replies": 0,
+  "key_violations": 0,
+  "malformed_lines": 0,
+  "non_monotone": 0,
+  "report_malformed": 0,
+  "revoked_actor_effects": 0,
+  "truth_mismatch": 0,
+  "unsupported_evidence": 0
+ },
+ "not_ok": 0,
+ "runs": 5600
+}

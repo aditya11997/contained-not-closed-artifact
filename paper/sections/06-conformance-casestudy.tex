@@ -1,0 +1,16 @@
+% Budget: 0.50 pp (AGENT) / 0.30 pp (ICRITO).
+% Sources: paper/generated/stripe.tex; docs/STRIPE_MAPPING.md; paper/generated/case_study.tex;
+% docs/CASE_STUDY.md (generated tables; outside the pre-registered contrasts; dev seeds).
+\section{Processor Conformance and an Agent Case Study}\label{sec:casestudy}
+
+\subsection{Stripe test-mode conformance (C1)}\label{sec:casestudy:c1}
+A test-mode adapter implements the sink's protocol on Stripe PaymentIntents with manual capture: create, cancel with an idempotency key, status read, and merchant capture at $D_i$. For each mapped transition, the conformance suite drives the simulator and Stripe with identical payments on a shared logical clock and requires the two event logs to agree line by line, which makes their hash chains equal. All \StripeMappingRowsMatched{} of \StripeMappingRows{} mapped transitions matched, and \StripeTestsPassed{} of \StripeTestsRun{} conformance tests passed: \StripeTransitionScripts{} transition scripts and \StripeEpisodes{} whole episodes of P3, P5 and P6 with and without faults. Two documented behaviors carry the model. A cancel after capture fails, and the stored error is returned again for the same key; after a lost acknowledgment, a replay with the same key returns the stored cancellation without a second effect, as documented~\cite{stripe2026idempotency} and observed live. C1 is \VerdictCOne. Its scope is narrow: live fault injection covered lost acknowledgments only, and test mode is not live mode.
+
+\subsection{A revoked LLM agent}\label{sec:casestudy:agent}
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.82\textwidth]{fig1_timeline}
+  \caption{One case-study run on Stripe test mode. Before the stop (left, in call order) the agent creates four payments; the mandate wrapper rejects an over-limit purchase. At the stop the revoked agent's remaining calls are denied. P6 cancels one flagged payment before capture and closes the captured ones on status reads, each on processor evidence.}
+  \label{fig:timeline}
+\end{figure*}
+To show the chain end to end (Fig.~\ref{fig:timeline}), a local \texttt{\CaseStudyModel} model drives a procurement agent through a minimal tool-calling loop. A brief asks it to buy a list of items; budget, vendor allowlist and per-purchase maximum are enforced in deterministic code, not by the model. After a fixed number of successful purchases, the harness revokes the agent while its loop is still running. Its remaining calls are denied and logged, and the checker finds \CaseStudyRevokedActorEffects{} revoked-actor effects. P6 then disposes of the pending payments on Stripe test mode or on the simulator, and in each of the \CaseStudyRuns{} runs its live dispositions equal those of a simulator replay. In \CaseStudySummariesOmitStop{} of \CaseStudyRuns{} runs, the agent's closing summary never mentions the revocation or a denied call, and some summaries list as placed purchases that the log shows were denied. The agent's account of its own work cannot close an incident; the processor's log can. With few payments, $k = 1$ and low faults, P3, P5 and P6 reach the same dispositions here, which says nothing about their differences.

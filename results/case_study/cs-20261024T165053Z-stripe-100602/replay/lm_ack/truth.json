@@ -1,0 +1,52 @@
+{
+ "c": 0.5,
+ "horizon": 16,
+ "log_anchor": {
+  "head_hash": "765f7715be333a2c254b63912069b781415143b5cf5c942d334f7b5ae01a7c1a",
+  "length": 9
+ },
+ "payments": [
+  {
+   "D_actual": 13,
+   "amount": 125000,
+   "d_nominal": 16,
+   "p_score": 0.2,
+   "permitted": true,
+   "s_cancel": 2,
+   "uid": "A000",
+   "y_suspect": false
+  },
+  {
+   "D_actual": 15,
+   "amount": 90000,
+   "d_nominal": 16,
+   "p_score": 0.8,
+   "permitted": true,
+   "s_cancel": 1,
+   "uid": "A001",
+   "y_suspect": true
+  },
+  {
+   "D_actual": 7,
+   "amount": 150000,
+   "d_nominal": 5,
+   "p_score": 0.8,
+   "permitted": true,
+   "s_cancel": 5,
+   "uid": "A002",
+   "y_suspect": true
+  },
+  {
+   "D_actual": 5,
+   "amount": 38000,
+   "d_nominal": 8,
+   "p_score": 0.2,
+   "permitted": true,
+   "s_cancel": 3,
+   "uid": "A003",
+   "y_suspect": false
+  }
+ ],
+ "schema": "p4.truth/v1",
+ "seed": 100602
+}

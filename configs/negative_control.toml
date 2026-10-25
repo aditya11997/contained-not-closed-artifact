@@ -1,0 +1,16 @@
+# Negative control (H4): k = inf, no faults, no capture jitter. Expected: P3 = P4 = P5 = P6
+# loss on every seed. Jitter must be none: with late captures, equality would also depend on
+# late_cancel timing, not only on assurance (CHANGELOG_RESEARCH, fix-before-freeze list).
+name = "negative_control"
+n_seeds = 2000
+policies = ["none", "edf", "mh", "lm_ack", "lm_verify", "lm_reconcile", "adaptive"]
+
+[[block]]
+fault = ["none"]
+slack = ["tight", "normal"]
+k = [inf]
+n = [8, 32]
+score = ["calibrated"]
+jitter = ["none"]
+c = [0.5]
+late_cancel = [true]

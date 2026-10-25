@@ -1,0 +1,37 @@
+% Fig. 2: system architecture. Hand-drawn TikZ (a diagram, not data); \input from 04-design.tex.
+% Components and arrows follow p4/ (sim, runbooks, journal, adapters), checker/ and agent/.
+\begin{tikzpicture}[
+  font=\scriptsize,
+  box/.style={draw, rounded corners=1.5pt, align=center, inner sep=2pt, text width=15mm, minimum height=7mm},
+  arr/.style={-{Latex[length=1.5mm]}, semithick},
+  lbl/.style={font=\tiny, inner sep=1pt}
+]
+% row 1
+\node[box] (agent) at (2.15, 0) {agent or\\scenario};
+\node[box] (cap) at (6.5, 0) {capture\\emulator};
+% row 2
+\node[box] (jr) at (0, -1.45) {write-ahead\\journal};
+\node[box] (rb) at (2.15, -1.45) {runbook\\P0--P6, $k$};
+\node[box] (fault) at (4.3, -1.45) {transport\\faults};
+\node[box, minimum height=9mm] (sink) at (6.5, -1.45) {sink: sim or\\Stripe test\\mode; log};
+% row 3
+\node[box] (rep) at (2.15, -2.95) {disposition\\report};
+\node[box] (chk) at (4.3, -2.95) {independent\\checker};
+\node[box, dashed] (truth) at (6.5, -2.95) {hidden\\$D_i$, $y_i$};
+
+\draw[arr] (agent) -- node[lbl, right] {observations} (rb);
+\draw[arr, {Latex[length=1.5mm]}-{Latex[length=1.5mm]}] (jr) -- node[lbl, above] {} (rb);
+\draw[arr] ([yshift=1mm]rb.east) -- ([yshift=1mm]fault.west);
+\draw[arr] ([yshift=-1mm]fault.west) -- ([yshift=-1mm]rb.east);
+\draw[arr] ([yshift=1mm]fault.east) -- ([yshift=1mm]sink.west);
+\draw[arr] ([yshift=-1mm]sink.west) -- ([yshift=-1mm]fault.east);
+\draw[arr] (cap) -- node[lbl, right] {at $D_i$} (sink);
+\draw[arr] (rb) -- (rep);
+\draw[arr] (rep) -- (chk);
+\draw[arr] (sink.south west) ++(1mm,0) -- node[lbl, above, sloped] {log} (chk.north east);
+\draw[arr, dashed] (truth) -- (chk);
+\draw[arr, dashed] (truth.east) -- ++(1.5mm,0) |- (cap.east);
+\node[lbl, below=0.6mm of chk, text width=30mm, align=center] {false closures, duplicate effects, invariants};
+\node[lbl, below=0.3mm of jr, text width=17mm, align=center] {intent, result;\\restart};
+\node[lbl, above=0.3mm of fault] {cancel, read, replies};
+\end{tikzpicture}

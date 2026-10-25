@@ -1,0 +1,14 @@
+# Scaling: wall time per episode vs n (timing.csv). Not a hypothesis test.
+name = "scaling"
+n_seeds = 100
+policies = ["none", "edf", "mh", "lm_ack", "lm_verify", "lm_reconcile", "adaptive"]
+
+[[block]]
+fault = ["none", "high"]
+slack = ["normal"]
+k = [4]
+n = [8, 32, 128, 512]
+score = ["calibrated"]
+jitter = ["uniform3"]
+c = [0.5]
+late_cancel = [true]

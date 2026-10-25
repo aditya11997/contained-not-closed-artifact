@@ -1,0 +1,138 @@
+# G1 dev exploration (exploratory, dev seeds only). NOT the canonical presets: those are in
+# configs/faults.toml and are untouched. Grid: one factor at a time around the current centre
+# (high: lambda = 0.02, L = 4, r = 0.5) plus two (lambda, L) corners. Each point's low level keeps the
+# current low/high ratios (lambda / 4, L / 2) and every level keeps the current f_req / f_resp.
+# Used only with `python -m experiments.run --faults configs/dev/g1_faults.toml` (refused on holdout).
+
+[none]
+f_req = 0.0
+f_resp = 0.0
+outage_rate = 0.0
+outage_length = 0
+outage_commit_prob = 0.0
+
+[g1_c_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.005
+outage_length = 2
+outage_commit_prob = 0.5
+
+[g1_c_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.02
+outage_length = 4
+outage_commit_prob = 0.5
+
+[g1_lam005_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.00125
+outage_length = 2
+outage_commit_prob = 0.5
+
+[g1_lam005_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.005
+outage_length = 4
+outage_commit_prob = 0.5
+
+[g1_lam05_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.0125
+outage_length = 2
+outage_commit_prob = 0.5
+
+[g1_lam05_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.05
+outage_length = 4
+outage_commit_prob = 0.5
+
+[g1_L2_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.005
+outage_length = 1
+outage_commit_prob = 0.5
+
+[g1_L2_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.02
+outage_length = 2
+outage_commit_prob = 0.5
+
+[g1_L8_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.005
+outage_length = 4
+outage_commit_prob = 0.5
+
+[g1_L8_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.02
+outage_length = 8
+outage_commit_prob = 0.5
+
+[g1_r0_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.005
+outage_length = 2
+outage_commit_prob = 0.0
+
+[g1_r0_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.02
+outage_length = 4
+outage_commit_prob = 0.0
+
+[g1_r1_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.005
+outage_length = 2
+outage_commit_prob = 1.0
+
+[g1_r1_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.02
+outage_length = 4
+outage_commit_prob = 1.0
+
+[g1_hiLhiL_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.0125
+outage_length = 4
+outage_commit_prob = 0.5
+
+[g1_hiLhiL_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.05
+outage_length = 8
+outage_commit_prob = 0.5
+
+[g1_loLloL_low]
+f_req = 0.02
+f_resp = 0.05
+outage_rate = 0.00125
+outage_length = 1
+outage_commit_prob = 0.5
+
+[g1_loLloL_high]
+f_req = 0.05
+f_resp = 0.15
+outage_rate = 0.005
+outage_length = 2
+outage_commit_prob = 0.5

@@ -1,0 +1,39 @@
+# G1 dev exploration copy of configs/presets.toml plus jitter.uniform6. Not canonical.
+# Named jitter and score models referenced by the experiment configs (configs/*.toml, WP4).
+# Fault presets live in configs/faults.toml. Every value here is hashed into each cell id and
+# into manifest.json, so changing a preset changes the cell ids of the runs that use it.
+#
+# PLACEHOLDER: uniform3 / early3 (j = 3) is the WP4 placeholder for the primary jitter. It is
+# not calibrated. Fix j on dev seeds before the prereg freeze (2026-10-27) and record it in
+# docs/CHANGELOG_RESEARCH.md; never tune it on holdout.
+
+[jitter.none]
+kind = "none"
+j = 0
+
+[jitter.uniform3]
+kind = "uniform"        # eps in {-3..3}: early or late capture
+j = 3
+
+[jitter.uniform6]
+kind = "uniform"        # G1 dev exploration only: eps in {-6..6}
+j = 6
+
+[jitter.early3]
+kind = "early_only"     # eps in {-3..0}: jitter sign ablation (secondary)
+j = 3
+
+[score.calibrated]
+kind = "calibrated"
+
+[score.shift_up]
+kind = "shift"          # true suspect prob = clip(p + 0.2)
+delta = 0.2
+
+[score.shift_down]
+kind = "shift"
+delta = -0.2
+
+[score.noisy1]
+kind = "noisy"          # logistic(logit(p) + N(0, 1))
+sigma = 1.0

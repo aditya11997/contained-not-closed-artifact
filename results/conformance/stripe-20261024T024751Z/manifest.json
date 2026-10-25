@@ -1,0 +1,33 @@
+{
+ "argv": [
+  "/Users/aditya/p4/.venv/lib/python3.13/site-packages/pytest/__main__.py",
+  "-q",
+  "--run-stripe",
+  "-m",
+  "stripe",
+  "tests/conformance"
+ ],
+ "backend": "stripe-test-mode",
+ "config": {
+  "path": "/Users/aditya/p4/tests/conformance/test_stripe_vs_sim.py",
+  "sha256": "5346171db6e43e5d67769bc0af61acaae6865b6d72025b3faf17e7483a381d12"
+ },
+ "end": "2026-10-24T02:48:45+00:00",
+ "git": {
+  "branch": "main",
+  "commit": "430c6a0279ffb97a7299dd23c210ffc102da1758",
+  "dirty": false
+ },
+ "kind": "stripe_conformance",
+ "packages": {
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "p4": "0.0.1",
+  "pandas": "3.0.6"
+ },
+ "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+ "python": "3.13.11 (main, Jan 27 2026, 23:31:20) [Clang 21.1.4 ]",
+ "schema": "p4.manifest/v1",
+ "start": "2026-10-24T02:47:51+00:00",
+ "stripe_version": "2026-09-30.endive"
+}

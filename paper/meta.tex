@@ -1,0 +1,22 @@
+% Title, author and artifact macros. The ONLY place identifying information may appear.
+% Section files must use \ArtifactURL etc., never literal names, handles or paths.
+
+\newcommand{\PaperTitle}{Contained Is Not Closed: Evidence-Bounded Disposition and Safe Resumption of Remediation for Pre-Revocation Agent Payments}
+
+\newcommand{\AuthorName}{Aditya Krishnan}
+\newcommand{\AuthorAffil}{Independent Researcher}
+\newcommand{\AuthorLocation}{Jersey City, NJ, USA}
+\newcommand{\AuthorEmail}{aditya11997@gmail.com}
+\newcommand{\RepoURL}{\CONFIRM{public artifact URL}}
+\newcommand{\AnonArtifactURL}{\CONFIRM{anonymized artifact URL}}
+
+\ifanon
+  \newcommand{\AuthorBlock}{\author{\IEEEauthorblockN{Anonymous Author(s)}}}
+  \newcommand{\ArtifactURL}{\AnonArtifactURL}
+  \hypersetup{pdfauthor={},pdftitle={\PaperTitle},pdfcreator={},pdfproducer={}}
+\else
+  \newcommand{\AuthorBlock}{\author{\IEEEauthorblockN{\AuthorName}
+    \IEEEauthorblockA{\AuthorAffil\\ \AuthorLocation\\ \AuthorEmail}}}
+  \newcommand{\ArtifactURL}{\RepoURL}
+  \hypersetup{pdftitle={\PaperTitle}}
+\fi

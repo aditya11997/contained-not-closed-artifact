@@ -1,0 +1,2546 @@
+{
+ "argv": [
+  "-m",
+  "experiments.run",
+  "--config",
+  "configs/secondary.toml",
+  "--partition",
+  "holdout",
+  "--out",
+  "results/holdout/secondary"
+ ],
+ "cells": [
+  {
+   "cell_id": "71752e7076fb",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_up",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "736987f22911",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_down",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": -0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "363b2a2d3c9c",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "noisy1",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "noisy",
+     "sigma": 1.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "14a7468cb0ee",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_up",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "cae020599e56",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_down",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": -0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "30661e7c465c",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "noisy1",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "noisy",
+     "sigma": 1.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "70f1a46db3e3",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_up",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "6859b2afc0b0",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_down",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": -0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "4e22bd83f78b",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "noisy1",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "noisy",
+     "sigma": 1.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "fe83609e0d60",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_up",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "5792e2f7c92e",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_down",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": -0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "230c7bc14af4",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "noisy1",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "noisy",
+     "sigma": 1.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "976b7fa82eb4",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_up",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "2c9ff7da160f",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_down",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": -0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "fff3877b8154",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "noisy1",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "noisy",
+     "sigma": 1.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "0983bfb1964b",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_up",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "afd14cf6f51b",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "shift_down",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": -0.2,
+     "kind": "shift",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "9d516e0d483b",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "noisy1",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "noisy",
+     "sigma": 1.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "93aa9c778a73",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "early3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "early_only"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "667ce2e09a9f",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "early3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "early_only"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "34f9e5aa0955",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "early3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "early_only"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "714caa61eb51",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "early3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "early_only"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "5d134d98840c",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "early3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "early_only"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "64795825c27a",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "early3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "early_only"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "57391d022e63",
+   "factors": {
+    "c": 1.0,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "d2d934021f2b",
+   "factors": {
+    "c": 1.0,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "d62570aeba86",
+   "factors": {
+    "c": 1.0,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "f3e78179f4be",
+   "factors": {
+    "c": 1.0,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "f24e4a425c67",
+   "factors": {
+    "c": 1.0,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "bb45551ed8e9",
+   "factors": {
+    "c": 1.0,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "9d3a61981cf6",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 128,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 128,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "05a9b499915d",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 128,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 128,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "b9d7ca855478",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 128,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 128,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "ed52429c7816",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 128,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 128,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "33eee29306ff",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 128,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 128,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "8d6dd7d28b5f",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": 1,
+    "late_cancel": true,
+    "n": 128,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 128,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "e20416aa643e",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": "inf",
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "4b89d6cb7108",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform3",
+    "k": "inf",
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "4ee7c28d971f",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": "inf",
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "f3d37517374d",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform3",
+    "k": "inf",
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "32e6cd511257",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": "inf",
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "c80214884d7f",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform3",
+    "k": "inf",
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 3,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "8ff5ae5c453d",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "8312b6336dc0",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": false,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "b0405c9b35a8",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "300bdf2315af",
+   "factors": {
+    "c": 0.5,
+    "fault": "none",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": false,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.0,
+    "f_resp": 0.0,
+    "name": "none",
+    "outage_commit_prob": 0.0,
+    "outage_length": 0,
+    "outage_rate": 0.0
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "26b3746b5d28",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "5a15d430ef90",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": false,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "b3269b4006e2",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "94d9ea0e6fd3",
+   "factors": {
+    "c": 0.5,
+    "fault": "low",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": false,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.02,
+    "f_resp": 0.05,
+    "name": "low",
+    "outage_commit_prob": 0.5,
+    "outage_length": 2,
+    "outage_rate": 0.005
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "46c1b1a9fe0b",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "84226879f36c",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": false,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "tight"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "tight"
+   }
+  },
+  {
+   "cell_id": "d5a89731037e",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": true,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  },
+  {
+   "cell_id": "36ea82622e87",
+   "factors": {
+    "c": 0.5,
+    "fault": "high",
+    "jitter": "uniform6",
+    "k": 1,
+    "late_cancel": false,
+    "n": 32,
+    "score": "calibrated",
+    "slack": "normal"
+   },
+   "fault": {
+    "f_req": 0.05,
+    "f_resp": 0.15,
+    "name": "high",
+    "outage_commit_prob": 0.5,
+    "outage_length": 4,
+    "outage_rate": 0.02
+   },
+   "scenario": {
+    "amount_max": 2000,
+    "amount_min": 100,
+    "amount_step": 100,
+    "d_floor": 2,
+    "d_max": 18,
+    "d_min": 5,
+    "jitter": {
+     "j": 6,
+     "kind": "uniform"
+    },
+    "n": 32,
+    "p_max": 0.92,
+    "p_min": 0.18,
+    "permit_prob": 0.94,
+    "q": 1,
+    "s_max": 5,
+    "s_min": 1,
+    "score": {
+     "delta": 0.0,
+     "kind": "calibrated",
+     "sigma": 0.0
+    },
+    "slack": "normal"
+   }
+  }
+ ],
+ "checker": {
+  "not_ok": 0,
+  "runs": 756000
+ },
+ "config": {
+  "path": "configs/secondary.toml",
+  "sha256": "015f81b91290364701bd48d16bd4eec31e2aaf1794e301bcc62d408e565266f9"
+ },
+ "end": "2026-10-24T03:56:50+00:00",
+ "experiment": "secondary",
+ "git": {
+  "branch": "main",
+  "commit": "430c6a0279ffb97a7299dd23c210ffc102da1758",
+  "dirty": false
+ },
+ "keep_runs": true,
+ "packages": {
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "p4": "0.0.1",
+  "pandas": "3.0.6"
+ },
+ "partition": "holdout",
+ "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+ "policies": [
+  "none",
+  "edf",
+  "mh",
+  "lm_ack",
+  "lm_verify",
+  "lm_reconcile",
+  "adaptive"
+ ],
+ "prereg_tag_commit": "430c6a0279ffb97a7299dd23c210ffc102da1758",
+ "presets_sha256": {
+  "faults.toml": "c942377f6886e997a1a9bdda3c2502badff05398e105c3809497f0d8a2f832cc",
+  "presets.toml": "a4f899974155c9c7775895552c5d6b935e0b36ff2a21db71cff1b4f12c221f02",
+  "scenario_default.toml": "f3807eb5fd9ca19a9924c8fb0ed7492ce768e3687faeff0284a48fbeefa84b4a"
+ },
+ "python": "3.13.11 (main, Jan 27 2026, 23:31:20) [Clang 21.1.4 ]",
+ "schema": "p4.manifest/v1",
+ "seeds": {
+  "count": 2000,
+  "first": 900000,
+  "last": 901999
+ },
+ "start": "2026-10-24T03:02:51+00:00",
+ "workers": 10
+}
